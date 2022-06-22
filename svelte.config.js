@@ -10,7 +10,17 @@ const config = {
 	preprocess: [preprocess({ postcss: true }), md.mdsvex(mdsvexConfig)],
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		vite: () => ({
+			resolve: {
+				alias: {
+					$stores: resolve(__dirname, './src/stores'),
+					$components: resolve(__dirname, './src/lib/shared/components'),
+					$models: resolve(__dirname, './src/lib/models'),
+					$data: resolve(__dirname, './src/lib/data')
+				}
+			}
+		})
 	}
 };
 
