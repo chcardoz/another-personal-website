@@ -14,8 +14,9 @@ const config = {
 		vite: () => ({
 			resolve: {
 				alias: {
+					// For absolute imports
 					$stores: resolve(__dirname, './src/stores'),
-					$components: resolve(__dirname, './src/lib/shared/components'),
+					$components: resolve(__dirname, './src/lib/components'),
 					$models: resolve(__dirname, './src/lib/models'),
 					$data: resolve(__dirname, './src/lib/data')
 				}
